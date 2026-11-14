@@ -50,6 +50,7 @@ Medians are still reported for comparison, but they are not used for conclusions
 Every number below is written by `scripts/03_bias_correction.R` to `results/results_summary.md`.
 
 Shared window: **4,267 days**, set by the Normal-like subtype (shortest follow-up).
+Log-rank test across subtypes before any window (uncorrected): **p = 0.021**.
 Log-rank test across subtypes inside the window: **p = 0.0345**.
 Same test without Normal-like (window 4,894 days): **p = 0.0198**.
 
@@ -120,7 +121,8 @@ Proportional-hazards check: global p = 0.017.
 2. **The subtypes differ inside the shared window** (log-rank p = 0.0345, and 0.0198 without Normal-like).
 3. **HER2-enriched and Luminal B carry a higher risk of death than Luminal A** (hazard ratios 2.11 and 1.64, confidence intervals above 1). Their average days alive inside the window are about 400 days lower than Luminal A's.
 4. **Basal-like is not clearly different from Luminal A** in the Cox model (HR 1.21, interval 0.77 to 1.89).
-5. **Read the hazard ratios with caution.** The proportional-hazards check is significant (p = 0.017), so one hazard ratio per subtype does not describe the whole follow-up. The estimates hint that Basal-like does worse than Luminal A early (alive at 5 years: 0.791 vs 0.867) and similarly or better later (alive at 10 years: 0.633 vs 0.589, but only 8 and 24 patients are still followed, and the intervals overlap widely). Restricted mean survival time and the 5-year figures are the safer summaries.
+5. **The window did not create the difference.** The uncorrected log-rank test is also below 0.05 (p = 0.021). What the window changes is that the unstable tail no longer drives the numbers: in the uncorrected figure, the Normal-like and HER2-enriched curves fall straight to zero at 4,267 and 6,456 days because the last patient in each group died, and the Basal-like curve drops at 7,455 days in the same way.
+6. **Read the hazard ratios with caution.** The proportional-hazards check is significant (p = 0.017), so one hazard ratio per subtype does not describe the whole follow-up. In `Figures/survival-by-subtype-balanced.png` the Basal-like and Luminal A curves cross at about 3,000 days: Basal-like is lower before that and similar or higher after it (alive at 5 years: 0.791 vs 0.867; at 10 years: 0.633 vs 0.589, but only 8 and 24 patients are still followed, and the intervals overlap widely). Restricted mean survival time and the 5-year figures are the safer summaries.
 
 ## What Was Corrected
 
