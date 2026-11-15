@@ -154,8 +154,7 @@ Five repeat samples from patients already counted were also removed. The earlier
 │   ├── 04_figures.R             # every figure, session info
 │   └── run_all.R                # runs the four scripts in order
 ├── data/                        # downloaded data (not tracked, several GB)
-├── results/                     # saved objects, results_summary.md, session_info.txt
-└── Figures/                     # all plots, with risk tables where relevant
+└── results/                     # all plots, with risk tables where relevant, saved objects, results_summary.md, session_info.txt
 ```
 
 ## Requirements
